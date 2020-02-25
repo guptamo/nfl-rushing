@@ -58,6 +58,4 @@ Make sure that you are running at least version 10.16 of node before attempting 
 2. run the dev server with `npm run start`
 3. point your browser to <http://localhost:1234>
 
-If you'd like to run the tests use `npm run test`
-
 Note that I was able to test this project in Firefox, MS Edge Chromium, Google Chrome, and Safari.
