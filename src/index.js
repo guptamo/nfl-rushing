@@ -1,49 +1,40 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
+import { compose } from 'ramda'
 
-import { getRushingStats } from './data_layer'
+import { createSortingFunction } from './data/sortingUtils'
+import { filterByName } from './data/filterUtils'
+import { RushingTable } from './components/RushingTable'
+import { DownloadLink } from './components/DownloadLink'
+import { useRushingStats } from './data/useRushingStats'
 
 const App = () => {
-  const [rushingStats, setRushingStats] = useState([])
+  const [ sortState, setSortState ] = useState({
+    Yds: null,
+    Lng: null,
+    TD: null
+  })
+  const [ nameFilter, setNameFilter ] = useState('')
+  const [ rushingStats ] = useRushingStats([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await getRushingStats()
-      setRushingStats(response)
-    };
-    fetchData()
-  }, [])
+  const handleChange = e => {
+    setNameFilter(e.target.value)
+  }
 
-  console.log(rushingStats)
- 
-  return (
-    <h1>Hi</h1>
-    // <table>
-    //   <thead>
-    //     <tr>
-    //       <th>Date Identified</th>
-    //       <th>Description of Issue</th>
-    //       <th>Status</th>
-    //       <th>Resolution</th>
-    //     </tr>
-    //   </thead>
-    //   <tbody>
-    //     {rushingStats.map(
-    //       ({ description, created_time, status, resolution, id }) => {
-    //         const colorClass = getColor(status);
-    //         return (
-    //           <tr key={id}>
-    //             <td><span className={colorClass}>{created_time}</span></td>
-    //             <td><span className={colorClass}>{description}</span></td>
-    //             <td><span className={colorClass}>{status}</span></td>
-    //             <td><span className={colorClass}>{resolution}</span></td>
-    //           </tr>
-    //         );
-    //       }
-    //     )}
-    //   </tbody>
-    // </table>
-  );
-};
+  const sortedState = compose(
+    createSortingFunction(sortState),
+    filterByName(nameFilter)
+  )(rushingStats)
+  
+  return <div>
+    <h1>NFL Rushing</h1>
+    <div className="controls">
+      <input className='namefilter' placeholder='Filter by name...' type='text' value={ nameFilter } onChange={ handleChange } />
+      <DownloadLink data={ sortedState }/>
+    </div>
+    <RushingTable data={ sortedState } setSortState={ setSortState } sortState={ sortState } />
+  </div>
+  
+}
 
 ReactDOM.render(<App />, document.getElementById('app'))

@@ -1,0 +1,64 @@
+{
+  "fields": [
+    {
+      "name" : "Player",
+      "label" : "Player"
+    },
+    {
+      "name" : "Team",
+      "label" : "Team"
+    },
+    {
+      "name" : "Pos",
+      "label" : "Pos"
+    },
+    {
+      "name" : "Att",
+      "label" : "Att"
+    },
+    {
+      "name" : "Att/G",
+      "label" : "Att/G"
+    },
+    {
+      "name" : "Yds",
+      "label" : "Yds"
+    },
+    {
+      "name" : "Avg",
+      "label" : "Avg"
+    },
+    {
+      "name" : "Yds/G",
+      "label" : "Yds/G"
+    },
+    {
+      "name" : "TD",
+      "label" : "TD"
+    },
+    {
+      "name" : "Lng",
+      "label" : "Lng"
+    },
+    {
+      "name" : "1st",
+      "label" : "1st"
+    },
+    {
+      "name" : "1st%",
+      "label" : "1st%"
+    },
+    {
+      "name" : "20+",
+      "label" : "20+"
+    },
+    {
+      "name" : "40+",
+      "label" : "40+"
+    },
+    {
+      "name" : "FUM",
+      "label" : "FUM"
+    }
+  ]
+}
