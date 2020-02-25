@@ -21,7 +21,7 @@ const App = () => {
     setNameFilter(e.target.value)
   }
 
-  const sortedState = compose(
+  const processedStats = compose(
     createSortingFunction(sortState),
     filterByName(nameFilter)
   )(rushingStats)
@@ -30,9 +30,9 @@ const App = () => {
     <h1>NFL Rushing</h1>
     <div className="controls">
       <input className='namefilter' placeholder='Filter by name...' type='text' value={ nameFilter } onChange={ handleChange } />
-      <DownloadLink data={ sortedState }/>
+      <DownloadLink data={ processedStats }/>
     </div>
-    <RushingTable data={ sortedState } setSortState={ setSortState } sortState={ sortState } />
+    <RushingTable data={ processedStats } setSortState={ setSortState } sortState={ sortState } />
   </div>
   
 }
