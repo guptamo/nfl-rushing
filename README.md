@@ -50,4 +50,14 @@ We will evaluate you on your ability to solve the problem defined in the require
 If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
 
 ### Installation and running this solution
-... TODO
+This solution runs purely in the browser and uses node, and react as the main technologies. I implemented it as much as I could in the time alotted in a functional style.
+
+Make sure that you are running at least version 10.16 of node before attempting to run this project. It might work on earlier versions however it was developped and tested on v10.16.
+
+1. install dependencies with `npm i`
+2. run the dev server with `npm run start`
+3. point your browser to <http://localhost:1234>
+
+If you'd like to run the tests use `npm run test`
+
+Note that I was able to test this project in Firefox, MS Edge Chromium, Google Chrome, and Safari.
