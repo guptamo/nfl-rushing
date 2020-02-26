@@ -18,7 +18,7 @@ const ascendingLngComparator = ({Lng: aLng}, {Lng: bLng}) => {
   const isBTouchDown = isTouchdown.test(bLng)
 
   if (!isATouchdown && !isBTouchDown) {
-    return aLng > bLng
+    return parseInt(aLng, 10) > parseInt(bLng, 10)
       ? 1
       : aLng === bLng
       ? 0
@@ -36,7 +36,7 @@ const ascendingLngComparator = ({Lng: aLng}, {Lng: bLng}) => {
   const aValue = aLng.replace('T', '')
   const bValue = bLng.replace('T', '')
   
-  return aValue > bValue
+  return parseInt(aValue, 10) > parseInt(bValue, 10)
     ? 1
     : aValue === bValue
     ? 0

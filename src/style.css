@@ -27,3 +27,7 @@ input.namefilter {
   justify-content: space-between;
   align-items: center;
 }
+
+.filterheader {
+  cursor: pointer;
+}

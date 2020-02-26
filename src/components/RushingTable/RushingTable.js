@@ -17,11 +17,11 @@ const RushingTable = ({data, setSortState, sortState}) => {
         <th>Pos</th>
         <th>Att</th>
         <th>Att/G</th>
-        <th onClick={ transitionSortState('Yds') }>Yrds { getDirectionIcon(sortState.Yds) }</th>
+        <th className="filterheader" onClick={ transitionSortState('Yds') }>Yrds { getDirectionIcon(sortState.Yds) }</th>
         <th>Avg</th>
         <th>Yds/G</th>
-        <th onClick={ transitionSortState('TD') }>TD { getDirectionIcon(sortState.TD) }</th>
-        <th onClick={ transitionSortState('Lng') }>Lng { getDirectionIcon(sortState.Lng) }</th>
+        <th className="filterheader" onClick={ transitionSortState('TD') }>TD { getDirectionIcon(sortState.TD) }</th>
+        <th className="filterheader" onClick={ transitionSortState('Lng') }>Lng { getDirectionIcon(sortState.Lng) }</th>
         <th>1st</th>
         <th>1st%</th>
         <th>20+</th>
